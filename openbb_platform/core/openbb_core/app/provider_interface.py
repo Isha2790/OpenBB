@@ -175,7 +175,9 @@ class ProviderInterface(metaclass=SingletonMeta):
     def _merge_fields(
         current: DataclassField, incoming: DataclassField, query: bool = False
     ) -> DataclassField:
-        """Merge 2 dataclass fields."""
+        """
+        Merging two DataclassField objects into one.
+        """
         curr_name = current.name
         curr_type: type | None = current.annotation
         curr_desc = getattr(current.default, "description", "")
